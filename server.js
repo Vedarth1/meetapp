@@ -5,12 +5,15 @@ const moment = require('moment');
 const socketio = require('socket.io');
 const PORT = process.env.PORT || 3000;
 
+// const cors = require('cors');
 const app = express();
 const server = http.createServer(app);
 
 const io = socketio(server);
 
+// app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 let rooms = {};
 let socketroom = {};
